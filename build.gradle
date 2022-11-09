@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+//  apply plugin: 'android'
+buildscript {
+    repositories {
+        google() // For Gradle 4.0+
+        // jcenter()
+        // maven { url 'https://maven.google.com' } // For Gradle < 4.0
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.0'
+    }
+}
+android {
+    compileSdkVersion 7
+    // buildToolsVersion '7.0.0'
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 7
+        // applicationId "hello"
+    }
+    signingConfigs {
+        mySigning {
+            storeFile file("first-keystore")
+            storePassword "nopasslol"
+            keyAlias "aliaslol"
+            keyPassword "nopasslol"
+        }
+    }
+    buildTypes {
+        release {
+             signingConfig signingConfigs.mySigning
+        }
+    }
+}
+
