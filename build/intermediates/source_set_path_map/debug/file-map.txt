@@ -1,0 +1,8 @@
+java.hello-pngs-0 /home/pi/my_git_repos/android-app-basic/build/generated/res/pngs/debug
+java.hello-resValues-1 /home/pi/my_git_repos/android-app-basic/build/generated/res/resValues/debug
+java.hello-rs-2 /home/pi/my_git_repos/android-app-basic/build/generated/res/rs/debug
+java.hello-mergeDebugResources-3 /home/pi/my_git_repos/android-app-basic/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+java.hello-mergeDebugResources-4 /home/pi/my_git_repos/android-app-basic/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+java.hello-merged_res-5 /home/pi/my_git_repos/android-app-basic/build/intermediates/merged_res/debug
+java.hello-debug-6 /home/pi/my_git_repos/android-app-basic/src/debug/res
+java.hello-main-7 /home/pi/my_git_repos/android-app-basic/src/main/res

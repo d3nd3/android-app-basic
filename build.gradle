@@ -9,10 +9,20 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.0'
+        classpath 'com.android.tools.build:gradle:3.4.0'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 android {
+    aaptOptions.cruncherEnabled = false
+    aaptOptions.useNewCruncher = false
+
     compileSdkVersion 7
     // buildToolsVersion '7.0.0'
     defaultConfig {

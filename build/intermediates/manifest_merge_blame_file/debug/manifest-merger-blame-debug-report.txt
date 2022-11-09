@@ -1,0 +1,44 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="java.hello"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="7"
+8-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="7" />
+9-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml
+10    <!-- Beware that these values are overridden by the build.gradle file -->
+11    <!-- <uses-sdk android:minSdkVersion="15" android:targetSdkVersion="26" /> -->
+12    <application android:debuggable="true" >
+12-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:11:5-24:19
+13
+14        <!--
+15        android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:roundIcon="@mipmap/ic_launcher_round" android:label="@string/app_name"
+16        android:supportsRtl="true"
+17        android:theme="@style/AppTheme">
+18        -->
+19
+20
+21        <!--
+22             This name is resolved to com.example.myapp.MainActivity
+23             based upon the package attribute
+24        -->
+25        <activity android:name="java.hello.MainActivity" >
+25-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:18:9-23:20
+25-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:18:19-47
+26            <intent-filter>
+26-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:19:13-22:29
+27                <action android:name="android.intent.action.MAIN" />
+27-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:20:17-69
+27-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:20:25-66
+28
+29                <category android:name="android.intent.category.LAUNCHER" />
+29-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:21:17-77
+29-->/home/pi/my_git_repos/android-app-basic/src/main/AndroidManifest.xml:21:27-74
+30            </intent-filter>
+31        </activity>
+32    </application>
+33
+34</manifest>
