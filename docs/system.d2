@@ -1,0 +1,71 @@
+# android-app-basic — system view
+# Not an app so much as a working build setup with an empty Activity in it.
+# Four zones: entry points, core, state, external.
+# Strokes only in the style classes so the SVG works in light and dark themes.
+
+direction: right
+grid-columns: 2
+grid-rows: 2
+
+classes: {
+  entry: {
+    style: { stroke: "#2e6ac7"; stroke-width: 2 }
+  }
+  core: {
+    style: { stroke: "#2ea043"; stroke-width: 2 }
+  }
+  state: {
+    style: { stroke: "#f0b90b"; stroke-width: 2 }
+  }
+  ext: {
+    style: { stroke: "#cf2e2e"; stroke-width: 2 }
+  }
+  store: {
+    style: { stroke: "#f0b90b"; stroke-width: 2 }
+  }
+}
+
+entry: Entry points {
+  direction: down
+
+  gradlew: "gradlew · wrapper pinned to 5.4.1, a stray copy in the source tree pins 3.6.2" { class: entry }
+  build: "build.gradle · AGP 3.4.0, compile and target SDK 7, release signing config" { class: entry }
+  props: "gradle.properties · aapt2 off, cruncher off, sdk.dir is the Linux SDK" { class: entry }
+  readme: "README.txt · a build journal, not documentation of the app" { class: entry }
+}
+
+core: Core {
+  direction: down
+  grid-columns: 2
+
+  manifest: "AndroidManifest · package java.hello, one launcher activity, no icon or theme" { class: core }
+  activity: "MainActivity · extends Activity, onCreate commented out, so the window is blank" { class: core }
+  merge: "Merged manifest · adds uses-sdk 7 and debuggable, keeps the package" { class: core }
+  mismatch: "Package mismatch · manifest java.hello, code hello, so the launcher class is missing" { class: core }
+
+  manifest -> merge
+  activity -> mismatch
+  merge -> mismatch
+}
+
+state: State {
+  direction: down
+
+  builddir: "build/ · 100 plus tracked intermediates, generated R and BuildConfig, class files" { class: store; shape: cylinder }
+  gradlehome: ".gradle/ · three committed caches, 4.4.1, 5.4.1, 7.5.1, one inside the package folder" { class: store; shape: cylinder }
+  keystore: "first-keystore · 2.5 KB key made 2020, valid to 2047, password in build.gradle" { class: store; shape: cylinder }
+  sdkprops: "local.properties · sdk.dir points at this machine, /usr/lib/android-sdk" { class: store; shape: cylinder }
+  noapk: "No APK · build/outputs holds only the two merger reports" { class: store; shape: cylinder }
+}
+
+external: External {
+  direction: down
+
+  sdk: "Android SDK · platform android-7, build-tools 27 and 30, platform-tools" { class: ext }
+  aapt2: "AAPT2 · will not run on arm or arm64, so aapt2 and the cruncher are off" { class: ext }
+  dist: "Gradle server · the wrappers download 5.4.1 and 3.6.2-all first run" { class: ext }
+}
+
+entry -> core
+core -> state
+core -> external

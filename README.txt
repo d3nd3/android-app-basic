@@ -1,3 +1,5 @@
+Prefer pictures? Start with **[HUMANS.md](HUMANS.md)**.
+
 gradlew is like a wrapper for gradle, the same way pyenv is a wrapper for python
 
 switching gradle versions with
